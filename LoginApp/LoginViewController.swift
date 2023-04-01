@@ -7,10 +7,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
+    
+    let login = "Alex"
+    let password = "1234"
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomVC = segue.destination as? WelcomeViewController else { return }
@@ -22,29 +25,32 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButtonTapped() {
-        guard let login = loginTF.text,
-              login == "Alex",
-              let password = passwordTF.text,
-              password == "1234" else {
+        guard let login = loginTF.text, login == self.login else {
+          showAlert(
+              withTitle: "Invalid login or password",
+              andMessage: "Please, enter correct login and password"
+          )
+          return
+      }
+        guard let password = passwordTF.text, password == self.password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password"
             )
             return
         }
-        
+         
         performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
     }
     
     @IBAction func forgotUserNameButtonTapped() {
-        showHint(withTitle: "Oops!", andMessage: "Your name is Alex")
+        showAlert(withTitle: "Oops!", andMessage: "Your name is \(login)")
     }
     @IBAction func forgotPasswordButtonTapped() {
-        showHint(withTitle: "Oops!", andMessage: "Your password is 1234")
+        showAlert(withTitle: "Oops!", andMessage: "Your password is \(password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        dismiss(animated: true)
         loginTF.text = ""
         passwordTF.text = ""
     }
@@ -56,12 +62,6 @@ class LoginViewController: UIViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-    private func showHint(withTitle title: String, andMessage message: String) {
-        let hint = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        hint.addAction(okAction)
-        present(hint, animated: true)
     }
 
 }
