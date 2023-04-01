@@ -11,17 +11,11 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomVC = segue.destination as? WelcomeViewController else { return }
         welcomVC.login = loginTF.text
     }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -45,7 +39,6 @@ class LoginViewController: UIViewController {
     @IBAction func forgotUserNameButtonTapped() {
         showHint(withTitle: "Oops!", andMessage: "Your name is Alex")
     }
-    
     @IBAction func forgotPasswordButtonTapped() {
         showHint(withTitle: "Oops!", andMessage: "Your password is 1234")
     }
@@ -64,7 +57,6 @@ class LoginViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true)
     }
-    
     private func showHint(withTitle title: String, andMessage message: String) {
         let hint = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
