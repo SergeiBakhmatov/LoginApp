@@ -35,6 +35,9 @@
                                 <rect key="frame" x="16" y="190" width="288" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
+                                <connections>
+                                    <segue destination="dPw-nH-t77" kind="presentation" modalPresentationStyle="fullScreen" id="CMA-lG-xqg"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vX6-Ok-J3t">
                                 <rect key="frame" x="16" y="234.5" width="288" height="28"/>
@@ -73,6 +76,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vX6-Ok-J3t" secondAttribute="trailing" constant="16" id="yHE-YN-AWo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTF" destination="UVV-gy-sLI" id="5G1-UB-lP3"/>
+                        <outlet property="passwordTF" destination="Luv-pN-Jle" id="Nm3-fT-6bT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,6 +128,10 @@
                             <constraint firstItem="n9e-uG-dEd" firstAttribute="top" secondItem="Ibi-Ky-quG" secondAttribute="top" constant="60" id="yBz-Ly-hqy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cna-Sf-jt9"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="M4e-Of-N9l" id="Is2-Ba-wCu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fON-5O-Gvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

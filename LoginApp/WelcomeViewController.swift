@@ -8,9 +8,15 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
+    @IBOutlet var welcomeLabel: UILabel!
+    
+    var login: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        welcomeLabel.text = "Welcom, \(login ?? "")!"
 
 
     }
