@@ -26,6 +26,48 @@ class LoginViewController: UIViewController {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
+    
+    @IBAction func logInButtonTapped() {
+        guard let login = loginTF.text,
+              !login.isEmpty,
+              let password = passwordTF.text,
+              !password.isEmpty else {
+            showAlert(
+                withTitle: "Invalid login or password",
+                andMessage: "Please, enter correct login and password"
+            )
+            return
+        }
+        
+        let loginPattern = "^[a-zA-Z]{3,10}$"
+        let isLoginValid = NSPredicate(format: "SELF MATCHES %@", loginPattern)
+            .evaluate(with: login)
+        
+        if !isLoginValid {
+            showAlert(
+                withTitle: "Invalid login or password",
+                andMessage: "Please, enter correct login and password"
+            )
+            return
+        }
+        
+        performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
+    }
+    
+    
+    
+    private func showAlert(withTitle title: String, andMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            self.loginTF.text = ""
+            self.passwordTF.text = ""
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    
+    
 
 
 }
