@@ -29,21 +29,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func logInButtonTapped() {
         guard let login = loginTF.text,
-              !login.isEmpty,
+              login == "Alex",
               let password = passwordTF.text,
-              !password.isEmpty else {
-            showAlert(
-                withTitle: "Invalid login or password",
-                andMessage: "Please, enter correct login and password"
-            )
-            return
-        }
-        
-        let loginPattern = "^[a-zA-Z]{3,10}$"
-        let isLoginValid = NSPredicate(format: "SELF MATCHES %@", loginPattern)
-            .evaluate(with: login)
-        
-        if !isLoginValid {
+              password == "1234" else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password"
@@ -54,21 +42,35 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
     }
     
+    @IBAction func forgotUserNameButtonTapped() {
+        showHint(withTitle: "Oops!", andMessage: "Your name is Alex")
+    }
     
+    @IBAction func forgotPasswordButtonTapped() {
+        showHint(withTitle: "Oops!", andMessage: "Your password is 1234")
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        dismiss(animated: true)
+        loginTF.text = ""
+        passwordTF.text = ""
+    }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.loginTF.text = ""
             self.passwordTF.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
     
-    
-    
-
+    private func showHint(withTitle title: String, andMessage message: String) {
+        let hint = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        hint.addAction(okAction)
+        present(hint, animated: true)
+    }
 
 }
 
