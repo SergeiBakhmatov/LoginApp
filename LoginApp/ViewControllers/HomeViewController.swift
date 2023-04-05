@@ -13,21 +13,30 @@ final class HomeViewController: UIViewController {
     
     var user: User!
     
+    private let colorOne = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+    private let colorTwo = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let colorOne = UIColor(red: 1, green: 0, blue: 0, alpha: 1).cgColor
-        let colorTwo = UIColor(red: 0, green: 0, blue: 1, alpha: 1).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [colorOne, colorTwo]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        view.layer.insertSublayer(gradientLayer, at: 0)
+        view.addVerticalGradientLayer(topColor: colorOne, bottomCollor: colorTwo)
         
         welcomeLabel.text = "Welcom, \(user.login)!"
 
     }
 
+}
+
+extension UIView {
+    
+    func addVerticalGradientLayer(topColor: UIColor, bottomCollor: UIColor) {
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = [topColor.cgColor, bottomCollor.cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        layer.insertSublayer(gradient, at: 0)
+        
+    }
 }
