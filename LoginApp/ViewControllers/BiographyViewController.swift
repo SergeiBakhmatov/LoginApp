@@ -29,5 +29,9 @@ final class BiographyViewController: UIViewController {
         biographyTextView.text = user.person.biography
 
     }
-
+    
+    @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
 }
