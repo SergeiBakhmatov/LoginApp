@@ -258,7 +258,13 @@
                             <constraint firstItem="pOe-o7-krT" firstAttribute="top" secondItem="KKS-DQ-F43" secondAttribute="bottom" constant="14.5" id="zuZ-12-qYp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Fc2-Ge-OaI"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Fc2-Ge-OaI">
+                        <barButtonItem key="rightBarButtonItem" title="Bio" id="FLW-cS-qNq">
+                            <connections>
+                                <segue destination="1Li-54-4M4" kind="presentation" modalPresentationStyle="fullScreen" id="5mb-M8-XL3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="departmentLabel" destination="TBb-QF-7B1" id="yXo-rA-cPG"/>
                         <outlet property="nameLabel" destination="KKS-DQ-F43" id="xs6-ts-c3F"/>
@@ -271,6 +277,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jny-8s-36S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3448" y="3"/>
+        </scene>
+        <!--Biography View Controller-->
+        <scene sceneID="LmC-Rf-kdX">
+            <objects>
+                <viewController id="sKf-md-zIf" customClass="BiographyViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q8E-ax-8gS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kqa-k3-gec">
+                                <rect key="frame" x="16" y="60" width="288" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="cWd-sZ-jRX"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XFs-El-3TS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kqa-k3-gec" firstAttribute="top" secondItem="XFs-El-3TS" secondAttribute="top" constant="16" id="BJr-ca-Z25"/>
+                            <constraint firstItem="Kqa-k3-gec" firstAttribute="centerX" secondItem="q8E-ax-8gS" secondAttribute="centerX" id="BKf-lW-KmN"/>
+                            <constraint firstItem="Kqa-k3-gec" firstAttribute="leading" secondItem="XFs-El-3TS" secondAttribute="leading" constant="16" id="moG-IY-HT0"/>
+                            <constraint firstItem="XFs-El-3TS" firstAttribute="trailing" secondItem="Kqa-k3-gec" secondAttribute="trailing" constant="16" id="uXV-me-YIu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RUc-zi-nvQ">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="QhK-g4-3Wg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="biographyTextView" destination="Kqa-k3-gec" id="6bn-yG-Q0R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36m-uM-9Nv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5291.25" y="2.112676056338028"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LWv-Y5-7PN">
@@ -310,6 +355,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ly0-za-52D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2587.5" y="1.056338028169014"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xCN-JZ-GRm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Li-54-4M4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mKz-G0-XX1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sKf-md-zIf" kind="relationship" relationship="rootViewController" id="cBW-PB-AMs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgS-zL-4cP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4293.75" y="2.112676056338028"/>
         </scene>
     </scenes>
     <resources>

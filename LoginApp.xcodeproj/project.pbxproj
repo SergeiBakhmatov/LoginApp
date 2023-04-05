@@ -16,6 +16,7 @@
 		776518DF29D81AEA004E6276 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776518DE29D81AEA004E6276 /* HomeViewController.swift */; };
 		776CBE0729DD81B3008C0E5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776CBE0629DD81B3008C0E5E /* User.swift */; };
 		776CBE0929DD9638008C0E5E /* SergeiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776CBE0829DD9638008C0E5E /* SergeiViewController.swift */; };
+		77F2D6E729DDC76D000B67E1 /* BiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F2D6E629DDC76D000B67E1 /* BiographyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		776518DE29D81AEA004E6276 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		776CBE0629DD81B3008C0E5E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		776CBE0829DD9638008C0E5E /* SergeiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SergeiViewController.swift; sourceTree = "<group>"; };
+		77F2D6E629DDC76D000B67E1 /* BiographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				776518CE29D809C0004E6276 /* LoginViewController.swift */,
 				776518DE29D81AEA004E6276 /* HomeViewController.swift */,
 				776CBE0829DD9638008C0E5E /* SergeiViewController.swift */,
+				77F2D6E629DDC76D000B67E1 /* BiographyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F2D6E729DDC76D000B67E1 /* BiographyViewController.swift in Sources */,
 				776518CF29D809C0004E6276 /* LoginViewController.swift in Sources */,
 				776CBE0929DD9638008C0E5E /* SergeiViewController.swift in Sources */,
 				776518CB29D809C0004E6276 /* AppDelegate.swift in Sources */,

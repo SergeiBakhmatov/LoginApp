@@ -43,8 +43,12 @@ final class SergeiViewController: UIViewController {
         departmentLabel.text = user.person.department
         positionLabel.text = user.person.position
         
-        
-
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
+        guard let biographyVC = navigationVC.topViewController as? BiographyViewController else { return }
+        biographyVC.user = user
     }
     
 }
