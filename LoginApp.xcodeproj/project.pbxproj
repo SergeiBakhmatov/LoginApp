@@ -14,6 +14,7 @@
 		776518D429D809C1004E6276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776518D329D809C1004E6276 /* Assets.xcassets */; };
 		776518D729D809C1004E6276 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776518D529D809C1004E6276 /* LaunchScreen.storyboard */; };
 		776518DF29D81AEA004E6276 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776518DE29D81AEA004E6276 /* WelcomeViewController.swift */; };
+		776CBE0729DD81B3008C0E5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776CBE0629DD81B3008C0E5E /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		776518D629D809C1004E6276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		776518D829D809C1004E6276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		776518DE29D81AEA004E6276 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		776CBE0629DD81B3008C0E5E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				776CBE0329DD7A52008C0E5E /* ViewControllers */,
+				776CBE0529DD810B008C0E5E /* Models */,
 				776CBE0429DD7A6B008C0E5E /* Storyboards */,
 				776CBE0229DD7A40008C0E5E /* App */,
 				776518D329D809C1004E6276 /* Assets.xcassets */,
@@ -92,6 +95,14 @@
 				776518D529D809C1004E6276 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		776CBE0529DD810B008C0E5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				776CBE0629DD81B3008C0E5E /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				776518CF29D809C0004E6276 /* LoginViewController.swift in Sources */,
 				776518CB29D809C0004E6276 /* AppDelegate.swift in Sources */,
 				776518CD29D809C0004E6276 /* SceneDelegate.swift in Sources */,
+				776CBE0729DD81B3008C0E5E /* User.swift in Sources */,
 				776518DF29D81AEA004E6276 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
