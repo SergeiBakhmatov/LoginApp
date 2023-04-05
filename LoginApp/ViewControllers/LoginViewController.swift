@@ -43,22 +43,23 @@ final class LoginViewController: UIViewController {
         performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
     }
     
-    @IBAction func forgotUserNameButtonTapped() {
-        showAlert(withTitle: "Oops!", andMessage: "Your name is \(login)")
+    
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(login)")
+        : showAlert(withTitle: "Oops", andMessage: "Your password is \(password)")
     }
-    @IBAction func forgotPasswordButtonTapped() {
-        showAlert(withTitle: "Oops!", andMessage: "Your password is \(password)")
-    }
+    
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         loginTF.text = ""
         passwordTF.text = ""
     }
     
-    private func showAlert(withTitle title: String, andMessage message: String) {
+    private func showAlert(withTitle title: String, andMessage message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.passwordTF.text = ""
+            textField?.text = ""
         }
         alert.addAction(okAction)
         present(alert, animated: true)
