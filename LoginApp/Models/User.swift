@@ -26,7 +26,7 @@ struct User {
                     name: "Клеопатра",
                     photoOne: "photoCleoOne",
                     photoTwo: "photoCleoTwo",
-                    age: 4
+                    age: "4 года"
                 )
             )
         )
@@ -48,7 +48,7 @@ struct Pet {
     let name: String
     let photoOne: String
     let photoTwo: String
-    let age: Int
+    let age: String
 }
 
 
