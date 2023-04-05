@@ -12,12 +12,18 @@ final class LoginViewController: UIViewController {
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    let login = "Alex"
-    let password = "1234"
+    private let user = User.getUser()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        loginTF.text = user.login
+        passwordTF.text = user.password
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomVC = segue.destination as? WelcomeViewController else { return }
-        welcomVC.login = loginTF.text
+        welcomVC.user = user
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -25,14 +31,14 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButtonTapped() {
-        guard let login = loginTF.text, login == self.login else {
+        guard let login = loginTF.text, login == user.login else {
           showAlert(
               withTitle: "Invalid login or password",
               andMessage: "Please, enter correct login and password"
           )
           return
       }
-        guard let password = passwordTF.text, password == self.password else {
+        guard let password = passwordTF.text, password == user.password else {
             showAlert(
                 withTitle: "Invalid login or password",
                 andMessage: "Please, enter correct login and password"
@@ -46,8 +52,8 @@ final class LoginViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(login)")
-        : showAlert(withTitle: "Oops", andMessage: "Your password is \(password)")
+        ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(user.login)")
+        : showAlert(withTitle: "Oops", andMessage: "Your password is \(user.password)")
     }
     
     

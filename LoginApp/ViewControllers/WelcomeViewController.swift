@@ -11,7 +11,7 @@ final class WelcomeViewController: UIViewController {
     
     @IBOutlet var welcomeLabel: UILabel!
     
-    var login: String!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ final class WelcomeViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         view.layer.insertSublayer(gradientLayer, at: 0)
         
-        welcomeLabel.text = "Welcom, \(login ?? "")!"
+        welcomeLabel.text = "Welcom, \(user.login)!"
 
     }
 
